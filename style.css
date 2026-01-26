@@ -1,0 +1,98 @@
+body {
+    background: linear-gradient(135deg, #050008, #12001f);
+    color: #e8d9ff;
+    font-family: Tahoma;
+    text-align: center;
+}
+
+h1 {
+    margin: 15px;
+    color: #b56cff;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px #6a00ff;
+}
+
+.panel {
+    background: rgba(20, 0, 40, 0.85);
+    padding: 14px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 12px;
+    box-shadow: 0 0 15px #4b0082;
+}
+
+.panel input,
+.panel button {
+    padding: 7px;
+    margin: 4px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.panel input {
+    background: #1a002b;
+    color: #eee;
+    border: 1px solid #5e2b97;
+}
+
+.panel button {
+    background: linear-gradient(135deg, #6a00ff, #a855f7);
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.panel button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px #9d4edd;
+}
+
+.map-container {
+    position: relative;
+    display: inline-block;
+}
+
+.map {
+    width: 900px;
+    border: 3px solid #4b0082;
+    box-shadow: 0 0 25px #3a005f;
+    border-radius: 8px;
+}
+
+/* البخاخ */
+.spray {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    opacity: 0.4;
+    border: 2px solid;
+    box-shadow: 0 0 12px currentColor;
+}
+
+/* مركز السيطرة */
+.center-point {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ffffff;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 6px #fff;
+}
+
+/* اسم العصابة */
+.gang-name {
+    position: absolute;
+    top: -20px;
+    width: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #f1e6ff;
+    text-shadow: 0 0 6px #6a00ff;
+}
