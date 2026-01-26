@@ -56,29 +56,49 @@ db.collection("sprays").onSnapshot(snapshot => {
 
     snapshot.forEach(doc => {
         const d = doc.data();
-        createSpray(d.x, d.y, d.color, d.name);
+        createSpray(d.x, d.y, d.color, d.name, doc.id);
     });
 });
 
 // ================= إنشاء بخاخ =================
-function createSpray(x, y, color, name) {
+function createSpray(x, y, color, name, id) {
 
     const spray = document.createElement("div");
     spray.className = "spray";
-    spray.style.left = (x - 35) + "px";
-    spray.style.top = (y - 35) + "px";
+
+    // حجم صغير
+    const size = 24;
+    spray.style.left = (x - size / 2) + "px";
+    spray.style.top = (y - size / 2) + "px";
+
+    spray.style.width = size + "px";
+    spray.style.height = size + "px";
+
     spray.style.background = color;
     spray.style.borderColor = color;
 
+    // اسم العصابة
     const label = document.createElement("div");
     label.className = "gang-name";
     label.innerText = name;
 
+    // نقطة المنتصف
     const center = document.createElement("div");
     center.className = "center-point";
 
     spray.appendChild(label);
     spray.appendChild(center);
+
+    // 🧹 حذف البخاخ (فقط بعد إدخال الرمز)
+    spray.addEventListener("click", () => {
+        if (!unlocked) return;
+
+        const confirmDelete = confirm("هل تريد حذف هذا البخاخ؟");
+        if (confirmDelete) {
+            db.collection("sprays").doc(id).delete();
+        }
+    });
+
     map.appendChild(spray);
 }
 
