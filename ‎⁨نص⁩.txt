@@ -1,7 +1,0 @@
-GPT
-
-index.html
-login.html
-private.html
-admin-apply.html
-gta.jpg
