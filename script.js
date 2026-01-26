@@ -90,7 +90,8 @@ function createSpray(x, y, color, name, id) {
     spray.appendChild(center);
 
     // 🧹 حذف البخاخ (فقط بعد إدخال الرمز)
-    spray.addEventListener("click", () => {
+   spray.addEventListener("click", (e) => {
+    e.stopPropagation();
         if (!unlocked) return;
 
         const confirmDelete = confirm("هل تريد حذف هذا البخاخ؟");
